@@ -17,6 +17,11 @@ class Registration extends Controller
      */
     public function index()
     {
-        echo 'Ура! Первый метод!';
+        $testModel = Manao::getModel('test');
+        if ($testModel) {
+            $this->renderView('registration');
+        } else {
+            echo 'Model not found';
+        }
     }
 }

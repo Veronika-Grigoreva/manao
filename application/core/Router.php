@@ -67,8 +67,8 @@ class Router
             $methodName = 'index';
         }
 
-        //регистрация автозагрузчика классов
-        spl_autoload_register('Router::loadController');
+        //подключение контроллера
+        self::loadController($controllerName);
 
         //создаем объект необходимого класса контроллера
         $controller = new $controllerName();

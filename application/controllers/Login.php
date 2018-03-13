@@ -17,6 +17,11 @@ class Login extends Controller
      */
     public function index()
     {
-        echo 'Страница авторизации';
+        $testModel = Manao::getModel('test');
+        if ($testModel) {
+            $this->renderView('login');
+        } else {
+            echo 'Model not found';
+        }
     }
 }

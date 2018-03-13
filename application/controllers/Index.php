@@ -17,6 +17,13 @@ class Index extends Controller
      */
     public function index()
     {
-        echo 'Ура! Первый метод!';
+        $testModel = Manao::getModel('test');
+        if ($testModel) {
+            $this->renderView('index');
+        } else {
+            echo 'Model not found';
+        }
+
+
     }
 }
